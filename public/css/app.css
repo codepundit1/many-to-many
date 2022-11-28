@@ -1,0 +1,5 @@
+
+.navbar .navbar-nav .nav-link.active {
+    background-color: #3a0ca3;
+    color: #fff;
+  }
