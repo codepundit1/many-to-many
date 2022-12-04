@@ -84,4 +84,12 @@ class SupplierController extends Controller
         if($supplier->products()->sync([$valid['product_id']], false))
             return redirect()->route('suppliers.index')->with('message', 'Product Assigned Successfully');
     }
+
+    public function removeProduct(Supplier $supplier, Product $product)
+    {
+        if ($supplier->products()->detach($product))
+            return redirect()->route('suppliers.index')->with('message', 'Product Removed Successfully');
+
+        return back()->with('error', 'Something went wrong');
+    }
 }
