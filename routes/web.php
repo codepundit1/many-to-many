@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PublicImageController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,7 @@ Route::get('suppliers/{supplier}/assign-product', [SupplierController::class, 'a
 Route::post('suppliers/{supplier}/assign-product', [SupplierController::class, 'assignProduct'])->name('suppliers.assign-product');
 Route::delete('suppliers/{supplier}/product/{product}/remove', [SupplierController::class, 'removeProduct'])
      ->name('suppliers.remove-product');
+
+Route::resource('public-images', PublicImageController::class)
+    ->parameters(['public-images' => 'publicImage'])
+    ->except('show');

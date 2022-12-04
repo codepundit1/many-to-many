@@ -24,6 +24,11 @@
                        aria-current="page"
                        href="{{ route('suppliers.index') }}">Suppliers</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('public-images.*') ? 'text-primary' : '' }}"
+                       aria-current="page"
+                       href="{{ route('public-images.index') }}">Public Image</a>
+                </li>
             </ul>
         </div>
     </div>

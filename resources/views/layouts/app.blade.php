@@ -45,7 +45,7 @@
     {{-- @include('partials.footer') --}}
 
     @yield('scripts')
-    <script>
+    {{-- <script>
         $(function() {
             $(document).on('click', '#delete', function(e) {
                 e.preventDefault();
@@ -70,7 +70,7 @@
                 })
             })
         })
-    </script>
+    </script> --}}
 
     <script>
         @if (Session::has('message'))
