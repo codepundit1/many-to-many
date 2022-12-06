@@ -5,13 +5,13 @@
         <div class="card shadow border-0 rounded w-50">
             <div class="card-body">
                 <h4 class="text-center">Edit Image</h4>
-                <form action="{{ route('public-images.update',$publicImage) }}"
+                <form action="{{ route('private-images.update',$privateImage) }}"
                       method="post"
                       enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
-                    @if ($publicImage)
-                        <img src="{{ $publicImage->image }}" alt="" height="60px" width="80px">
+                    @if ($privateImage)
+                    <img src="{{ route('private.image', $privateImage) }}" alt="" height="60px" width="80px">
                     @endif
                     <div class="form-group my-3">
                         <label for="image">Image</label>
@@ -19,14 +19,14 @@
                                name="image"
                                id="image"
                                class="form-control"
-                               value="{{ $publicImage->image }}"
+                               value="{{ $privateImage->image }}"
                                required>
                         @error('image')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group my-3">
-                        <a href="{{ route('public-images.index') }}"
+                        <a href="{{ route('private-images.index') }}"
                            class="btn btn-secondary">Back</a>
                         <button class="btn btn-primary">Update</button>
                     </div>

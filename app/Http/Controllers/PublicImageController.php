@@ -62,7 +62,9 @@ class PublicImageController extends Controller
 
     public function destroy(PublicImage $publicImage)
     {
-        if($publicImage->delete())
+        if (Storage::disk('public')->exists($publicImage->getRawOriginal('image')))
+            Storage::disk('public')->delete($publicImage->getRawOriginal('image'));
+        if ($publicImage->delete())
             return redirect()->back()->with('message', 'Image Deleted successfully');
     }
 }
