@@ -35,11 +35,11 @@
                        aria-current="page"
                        href="{{ route('private-images.index') }}">Private Image</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('bucket-images.*') ? 'text-primary' : '' }}"
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('buckets.*') ? 'text-primary' : '' }}"
                        aria-current="page"
-                       href="{{ route('bucket-images.index') }}">S3 Bucket</a>
-                </li> --}}
+                       href="{{ route('buckets.index') }}">S3 Bucket</a>
+                </li>
             </ul>
         </div>
     </div>

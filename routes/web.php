@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BucketController;
 use App\Http\Controllers\PrivateImageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PublicImageController;
@@ -34,3 +35,7 @@ Route::resource('private-images', PrivateImageController::class)
     ->except('show');
 
 Route::get('private-images/{privateImage}/image', [PrivateImageController::class, 'privateImage'])->name('private.image');
+
+
+Route::resource('buckets', BucketController::class)->except('show');
+Route::get('s3-images/{bucket}/image', [BucketController::class, 's3Image'])->name('s3.image');
