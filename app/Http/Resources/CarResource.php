@@ -22,6 +22,8 @@ class CarResource extends JsonResource
             'cover_image' => route('cars.image', $this->id),
             'model' => $this->model,
             'price' => $this->price,
+            'created_at' => $this->when(request()->is('api/cars/*'), $this->created_at),
+            'updated_at' => $this->when(request()->is('api/cars/*'), $this->updated_at),
         ];
     }
 }

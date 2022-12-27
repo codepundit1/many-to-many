@@ -24,6 +24,7 @@ class CarController extends Controller
 
     public function show($id)
     {
+        return new CarResource(Car::findOrFail($id));
     }
 
     public function update(Request $request, $id)
