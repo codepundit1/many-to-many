@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BucketController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PrivateImageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PublicImageController;
@@ -39,3 +40,5 @@ Route::get('private-images/{privateImage}/image', [PrivateImageController::class
 
 Route::resource('buckets', BucketController::class)->except('show');
 Route::get('s3-images/{bucket}/image', [BucketController::class, 's3Image'])->name('s3.image');
+
+Route::resource('drivers', DriverController::class)->except('show');

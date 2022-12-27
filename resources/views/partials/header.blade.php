@@ -40,6 +40,11 @@
                        aria-current="page"
                        href="{{ route('buckets.index') }}">S3 Bucket</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('drivers.*') ? 'text-primary' : '' }}"
+                       aria-current="page"
+                       href="{{ route('drivers.index') }}">Driver(API)</a>
+                </li>
             </ul>
         </div>
     </div>
