@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BucketController;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PrivateImageController;
 use App\Http\Controllers\ProductController;
@@ -42,3 +43,5 @@ Route::resource('buckets', BucketController::class)->except('show');
 Route::get('s3-images/{bucket}/image', [BucketController::class, 's3Image'])->name('s3.image');
 
 Route::resource('drivers', DriverController::class)->except('show');
+Route::resource('cars', CarController::class)->except('show');
+Route::get('cars/{car}/image', [CarController::class, 'carImage'])->name('cars.image');

@@ -45,6 +45,11 @@
                        aria-current="page"
                        href="{{ route('drivers.index') }}">Driver(API)</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('cars.*') ? 'text-primary' : '' }}"
+                       aria-current="page"
+                       href="{{ route('cars.index') }}">CAR(API)</a>
+                </li>
             </ul>
         </div>
     </div>
