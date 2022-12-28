@@ -86,5 +86,10 @@ class CarController extends Controller
 
     public function destroy($id)
     {
+        $car = Car::findOrFail($id);
+
+        if ($car->delete())
+            return response()->json(['message' => 'Car successfully deleted']);
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 }
