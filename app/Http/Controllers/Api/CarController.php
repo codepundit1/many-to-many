@@ -43,7 +43,7 @@ class CarController extends Controller
         $car = Car::create($valid);
 
         if($car)
-            return response()->json(['message' => 'Car successfully created', new CarResource($car)]);
+            return response()->json(['message' => 'Car successfully created', 'data' => new CarResource($car)]);
         return response()->json(['error' => 'Something went wrong'], 500);
     }
 
